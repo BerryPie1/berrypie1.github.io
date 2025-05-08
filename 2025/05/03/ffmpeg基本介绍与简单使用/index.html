@@ -9,12 +9,12 @@
   <meta name="description" content="介绍FFmpeg 是领先的多媒体框架，能够解码、编码、转码、多路复用、解多路复用、流式传输、过滤和播放人类和机器创造的几乎所有内容。它支持从最晦涩的古老格式到最前沿的格式。无论它们是由某个标准委员会、社区还是公司设计的。它还具有高度的可移植性： FFmpeg 可在 Linux、Mac OS X、Microsoft Windows、BSD、Solaris 等多种构建环境、机器架构和配置下编译、运行并">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FFmpeg基本介绍与简单使用">
-<meta property="og:url" content="http://example.com/2025/05/03/ffmpeg%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E4%B8%8E%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8/index.html">
+<meta property="og:url" content="http://example.com/2025/05/03/ffmpeg%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E4%B8%8E%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="BerryPie1&#39;s Blog">
 <meta property="og:description" content="介绍FFmpeg 是领先的多媒体框架，能够解码、编码、转码、多路复用、解多路复用、流式传输、过滤和播放人类和机器创造的几乎所有内容。它支持从最晦涩的古老格式到最前沿的格式。无论它们是由某个标准委员会、社区还是公司设计的。它还具有高度的可移植性： FFmpeg 可在 Linux、Mac OS X、Microsoft Windows、BSD、Solaris 等多种构建环境、机器架构和配置下编译、运行并">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-05-03T07:30:25.000Z">
-<meta property="article:modified_time" content="2025-05-03T08:03:24.867Z">
+<meta property="article:modified_time" content="2025-05-08T18:30:09.734Z">
 <meta property="article:author" content="BerryPie1">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -74,9 +74,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-ffmpeg基本介绍与简单实用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-ffmpeg基本介绍与简单使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/05/03/ffmpeg%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E4%B8%8E%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8/" class="article-date">
+    <a href="/2025/05/03/ffmpeg%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E4%B8%8E%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" class="article-date">
   <time class="dt-published" datetime="2025-05-03T07:30:25.000Z" itemprop="datePublished">2025-05-03</time>
 </a>
     
@@ -97,14 +97,22 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>FFmpeg 是领先的多媒体框架，能够解码、编码、转码、多路复用、解多路复用、流式传输、过滤和播放人类和机器创造的几乎所有内容。它支持从最晦涩的古老格式到最前沿的格式。无论它们是由某个标准委员会、社区还是公司设计的。它还具有高度的可移植性： FFmpeg 可在 Linux、Mac OS X、Microsoft Windows、BSD、Solaris 等多种构建环境、机器架构和配置下编译、运行并通过我们的测试基础架构 FATE。</p>
-<h3 id="ffmpeg命令行工具"><a href="#ffmpeg命令行工具" class="headerlink" title="ffmpeg命令行工具"></a>ffmpeg命令行工具</h3><p>ffmpeg是一个通用的媒体转换器，读取各种输入，过滤并转码为各种输出格式。</p>
-<p><code>ffmpeg [global_options] &#123;[input_file_options] -i input_url&#125; ... &#123;[output_file_options] output_url&#125; ...</code></p>
-<p>ffmpeg通过-i指定任意数量的输入，并写任意数量的输出。</p>
+<h3 id="ffmpeg命令行工具"><a href="#ffmpeg命令行工具" class="headerlink" title="ffmpeg命令行工具"></a>ffmpeg命令行工具</h3><p>ffmpeg命令行工具官方文档：<a target="_blank" rel="noopener" href="https://ffmpeg.org/ffmpeg.html">ffmpeg Documentation</a></p>
+<p>ffmpeg是一个通用的媒体转换器，读取各种输入，过滤并转码为各种输出格式。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg [<span class="type">global_options</span>] &#123;[<span class="type">input_file_options</span>] <span class="literal">-i</span> input_url&#125; ... &#123;[<span class="type">output_file_options</span>] output_url&#125; ...</span><br></pre></td></tr></table></figure>
+
+<p>ffmpeg通过<code>-i</code>选项（option）指定任意数量的输入，并写任意数量的输出。命令行中任何不能被解释为选项的内容均被视为<strong>输出url</strong>。每个输入和输出都可以包含任意数量不同类型的基本流（视频&#x2F;音频&#x2F;字幕&#x2F;数据），但允许的流数量和类型可能受到容器格式的限制。自动选择或使用<code>-map</code>选项可以选择那些输入流将进入哪些输出流。</p>
+<p>要在选项中引用输入&#x2F;输出，必须使用它们的索引（从0开始），例如第一个输入为0，第二个输入为1。同样地，输出&#x2F;输出中的流也通过索引来引用，例如2:3表示第三个输入或输出的第四个流。</p>
+<p>一般来说，选项作用于下一个指定文件。因此，顺序很重要，同一选项可以在命令行中出现多次。每次出现的选项都会作用于下一个输入或输出文件。但全局选项（如冗长程度<code>verbosity level</code>）除外，它们应首先指定。</p>
+<p>一些简单的例子如下。</p>
+<p>通过重新编码媒体流，将输入媒体文件转化为另一种格式。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg <span class="literal">-i</span> input.mp4 output.avi</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/03/ffmpeg%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E4%B8%8E%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8/" data-id="cma7yi0xj00006cn11v0u5ib3" data-title="FFmpeg基本介绍与简单使用" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/05/03/ffmpeg%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E4%B8%8E%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" data-id="cmafpflru0000v4n1fbbzdks4" data-title="FFmpeg基本介绍与简单使用" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -171,7 +179,7 @@
       <ul>
         
           <li>
-            <a href="/2025/05/03/ffmpeg%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E4%B8%8E%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8/">FFmpeg基本介绍与简单使用</a>
+            <a href="/2025/05/03/ffmpeg%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E4%B8%8E%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">FFmpeg基本介绍与简单使用</a>
           </li>
         
           <li>
