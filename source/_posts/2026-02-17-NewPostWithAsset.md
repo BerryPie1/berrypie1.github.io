@@ -8,6 +8,3 @@ tags:
 
 ### Without "2026-02-17-NewPostWithAsset/"
 ![I'm still sweating](emoji.jpg)
-
-### Second
-<img src="/_posts/2026-02-17-NewPostWithAsset/emoji.jpg" class="" title="sweating">
