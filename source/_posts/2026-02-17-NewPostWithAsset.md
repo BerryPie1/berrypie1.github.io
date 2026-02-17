@@ -8,3 +8,5 @@ tags:
 
 ### Without "2026-02-17-NewPostWithAsset/"
 ![I'm still sweating](emoji.jpg)
+
+图片因为修改配置失效
