@@ -6,4 +6,4 @@ tags:
 ### Using an asset in a post with the asset tag
 {% asset_img emoji.jpg I'm sweating %}
 ### Using an asset in a post with markdown
-![I'm sweating](emoji.jpg)
+![I'm sweating](2026-02-17-NewPostWithAsset/emoji.jpg)
