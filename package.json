@@ -5,7 +5,7 @@
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo clean && hexo g && git add . && git commit -m 'update' && git push",
+    "deploy": "hexo clean && git add . && git commit -m 'update' && git push",
     "server": "hexo server"
   },
   "hexo": {
@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "hexo": "^7.0.0",
-    "hexo-asset-image": "github:CodeFalling/hexo-asset-image",
     "hexo-asset-img": "^1.2.0",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
